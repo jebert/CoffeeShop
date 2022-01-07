@@ -10,29 +10,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.eberts.domain.Produto;
-import br.com.eberts.services.ProdutoService;
+import br.com.eberts.domain.Componente;
+import br.com.eberts.services.ComponenteService;
 
 @RestController
-@RequestMapping(value="/produtos")
-public class ProdutoResource {
+@RequestMapping(value="/Componentes")
+public class ComponenteResource {
 	
 	@Autowired
-	private ProdutoService pService;
+	private ComponenteService cService;
 	
 	@RequestMapping(value="/{id}" ,method = RequestMethod.GET)
-	public ResponseEntity<Produto> find(@PathVariable Integer id) {
+	public ResponseEntity<Componente> find(@PathVariable Integer id) {
 		
-		Produto ing = pService.find(id);
+		Componente ing = cService.find(id);
 		
 		return ResponseEntity.ok().body(ing);
 
 	}
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<List<Produto>> findAll() {
+	public ResponseEntity<List<Componente>> findAll() {
 		
-		List<Produto> ing = pService.findAll();
+		List<Componente	> ing = cService.findAll();
 		
 		return ResponseEntity.ok().body(ing);
 

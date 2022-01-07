@@ -21,7 +21,8 @@ public class IngredienteService {
 		return ing.orElseThrow(()-> new ObjectNotFoundException("Ingrediente Id: " + id + ", não encontrado!"));
 	}
 	
-	public Ingrediente create(Ingrediente i) {
+	public Ingrediente insert(Ingrediente i) {
+		i.setId(null);
 		Ingrediente ing = iRepo.save(i);
 		return ing;
 	
