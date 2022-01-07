@@ -12,12 +12,16 @@ import br.com.eberts.domain.Ingrediente;
 import br.com.eberts.domain.Produto;
 import br.com.eberts.domain.enums.UnidadeDeMedida;
 import br.com.eberts.repositories.IngredienteRepository;
+import br.com.eberts.repositories.ProdutoRepository;
 
 @SpringBootApplication
 public class CoffeeShopApplication implements CommandLineRunner {
 	
 	@Autowired
 	IngredienteRepository iRepo;
+	
+	@Autowired
+	ProdutoRepository pRepo;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CoffeeShopApplication.class, args);
@@ -40,7 +44,9 @@ public class CoffeeShopApplication implements CommandLineRunner {
 		Componente c2 = new Componente(null,coffee,10.00,capuccino);
 		Componente c3 = new Componente(null,chocolate,0.03,capuccino);
 		
+		capuccino.setComponentes(Arrays.asList(c1,c2,c3));
 		
+		pRepo.saveAll(Arrays.asList(capuccino));
 		iRepo.saveAll(Arrays.asList(water,egg,milk,coffee,flour,chocolate,vanilla,icecream));
 	}
 
