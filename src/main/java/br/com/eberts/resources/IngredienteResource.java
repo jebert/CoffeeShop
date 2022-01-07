@@ -47,5 +47,20 @@ public class IngredienteResource {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(ing.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 	}
+	
+	@RequestMapping(value="/{id}" ,method = RequestMethod.PUT)
+	public ResponseEntity<Void> update(@PathVariable Integer id,@RequestBody Ingrediente ing){
+		ing = iService.update(ing);
+		return ResponseEntity.noContent().build();
+	}
+	
+	@RequestMapping(value="/{id}" ,method = RequestMethod.DELETE)
+	public ResponseEntity<Ingrediente> delete(@PathVariable Integer id) {
+		
+		iService.delete(id);
+		
+		return ResponseEntity.noContent().build();
+
+	}
 
 }
