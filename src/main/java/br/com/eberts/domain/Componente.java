@@ -7,7 +7,7 @@ public class Componente implements Serializable{
 	 
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
+	private Integer Id;
 	private Ingrediente ingrediente;
 	private Double quantidade;
 	
@@ -17,12 +17,62 @@ public class Componente implements Serializable{
 		
 	}
 
-	public Componente(Integer id, Ingrediente ingrediente, Double quantidade, Produto produto) {
+	public Componente(Integer Id, Ingrediente ingrediente, Double quantidade, Produto produto) {
 		super();
-		this.id = id;
+		this.Id = Id;
 		this.ingrediente = ingrediente;
 		this.quantidade = quantidade;
 		this.produto = produto;
+	}
+
+	public Integer getId() {
+		return Id;
+	}
+
+	public void setId(Integer Id) {
+		this.Id = Id;
+	}
+
+	public Ingrediente getIngrediente() {
+		return ingrediente;
+	}
+
+	public void setIngrediente(Ingrediente ingrediente) {
+		this.ingrediente = ingrediente;
+	}
+
+	public Double getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Double quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public Produto getProduto() {
+		return produto;
+	}
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(Id, ingrediente, produto);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Componente other = (Componente) obj;
+		return Objects.equals(Id, other.Id) && Objects.equals(ingrediente, other.ingrediente)
+				&& Objects.equals(produto, other.produto);
 	}
 	
 	
