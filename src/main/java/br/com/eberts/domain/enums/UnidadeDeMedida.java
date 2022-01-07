@@ -2,20 +2,18 @@ package br.com.eberts.domain.enums;
 
 public enum UnidadeDeMedida {
 
-	LITRO(1,"Litro","l"),
-	MILILITRO(2,"Mililitro","ml"),
-	KILOGRAMA(3,"Kilograma","kg"),
-	GRAMA(4,"Grama","g"),
-	UNIDADE(5,"Unidade","un");
+	l(1,"Litro"),
+	ml(2,"Mililitro"),
+	kg(3,"Kilograma"),
+	g(4,"Grama"),
+	un(5,"Unidade");
 	
 	private int cod;
 	private String nome;
-	private String simbolo;
 	
-	private UnidadeDeMedida(int cod, String nome, String simbolo) {
+	private UnidadeDeMedida(int cod, String nome) {
 		this.cod = cod;
 		this.nome = nome;
-		this.simbolo = simbolo;
 	}
 
 	public int getCod() {
@@ -24,10 +22,6 @@ public enum UnidadeDeMedida {
 
 	public String getNome() {
 		return nome;
-	}
-
-	public String getSimbolo() {
-		return simbolo;
 	}
 	
 	public static UnidadeDeMedida toEnum(Integer cod) {

@@ -34,14 +34,14 @@ public class CoffeeShopApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Ingrediente water = new Ingrediente(null,"Water",UnidadeDeMedida.LITRO, 0.20);
-		Ingrediente egg  = new Ingrediente(null,"Egg",UnidadeDeMedida.UNIDADE, 0.10);		
-		Ingrediente milk = new Ingrediente(null,"Milk",UnidadeDeMedida.LITRO, 3.20);
-		Ingrediente coffee = new Ingrediente(null,"Coffee",UnidadeDeMedida.GRAMA, 5.50);
-		Ingrediente flour = new Ingrediente(null,"Flour",UnidadeDeMedida.KILOGRAMA ,2.75);
-		Ingrediente chocolate = new Ingrediente(null,"Chocolate",UnidadeDeMedida.GRAMA,0.75);
-		Ingrediente vanilla = new Ingrediente(null,"Vanilla",UnidadeDeMedida.GRAMA,0.75);
-		Ingrediente icecream = new Ingrediente(null,"Icecream",UnidadeDeMedida.LITRO, 5.25);
+		Ingrediente water = new Ingrediente(null,"Water",UnidadeDeMedida.l, 0.20);
+		Ingrediente egg  = new Ingrediente(null,"Egg",UnidadeDeMedida.un, 0.10);		
+		Ingrediente milk = new Ingrediente(null,"Milk",UnidadeDeMedida.l, 3.20);
+		Ingrediente coffee = new Ingrediente(null,"Coffee",UnidadeDeMedida.g, 5.50);
+		Ingrediente flour = new Ingrediente(null,"Flour",UnidadeDeMedida.kg ,2.75);
+		Ingrediente chocolate = new Ingrediente(null,"Chocolate",UnidadeDeMedida.g,0.75);
+		Ingrediente vanilla = new Ingrediente(null,"Vanilla",UnidadeDeMedida.g,0.75);
+		Ingrediente icecream = new Ingrediente(null,"Icecream",UnidadeDeMedida.l, 5.25);
 
 		Produto capuccino = new Produto(null,"Capuccino", 6.00, "URL_Imagem");
 		
